@@ -1,0 +1,24 @@
+# GNU screenの設定ファイル
+# 20090918
+ 
+# 256色拡張
+# (frexx.de/xterm-256-notes/ の設定を改良したもの)
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+termcapinfo rxvt-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
+defbce "on"
+ 
+## 起動時のメッセージを表示しない(Gentoo Linuxではoff)
+startup_message off
+
+## 一部キー割り当てを変更
+escape ^Tt             # 比較的無難?(Emacsなど、衝突自体は存在する)
+bind ^W windowlist -b  # リストから選択してEnterで切替
+bind ^Q quit           # 確認の後、全て終了
+ 
+## Emacs風ウィンドウ管理
+bind 1 only     #  C-x 1
+bind 2 split    #  C-x 2
+bind 0 remove   #  C-x 0
+bind o focus    #  C-x o
+
